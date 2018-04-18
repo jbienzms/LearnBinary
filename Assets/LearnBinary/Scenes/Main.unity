@@ -958,6 +958,11 @@ Prefab:
       propertyPath: GazeTransform
       value: 
       objectReference: {fileID: 2130429406}
+    - target: {fileID: 114000013868099214, guid: 3eddd1c29199313478dd3f912bfab2ab,
+        type: 2}
+      propertyPath: SetStabilizationPlane
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3eddd1c29199313478dd3f912bfab2ab, type: 2}
   m_IsPrefabParent: 0
@@ -1664,6 +1669,10 @@ Prefab:
       propertyPath: m_LocalEulerAnglesHint.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2300000, guid: 38800b67c9d55584d9d2e9aac11b6c41, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 1dc1f5521f7cfae4a85940f7f0e5da71, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 38800b67c9d55584d9d2e9aac11b6c41, type: 3}
   m_IsPrefabParent: 0
@@ -2692,14 +2701,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: caed7939ea630564187b033d5c0872f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AdditionalPlacementLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  FaceWhilePlacing: 1
-  PlacingOnStart: 1
-  SavedAnchorFriendlyName: 
-  ShowMeshWhilePlacing: 0
-  UseWorldAnchor: 0
 --- !u!1 &1845597729
 GameObject:
   m_ObjectHideFlags: 0
