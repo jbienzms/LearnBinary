@@ -5,18 +5,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public enum LearningState
-{
-	Placing,
-	Interacting,
-}
-
 public class LearningController : Singleton<LearningController>
 {
-	#region Member Variables
-	private LearningState state;
-	#endregion // Member Variables
-
 	#region Inspector Fields
 	[Tooltip("The bit manager the scene.")]
 	public BitManager bitManager;
@@ -27,9 +17,6 @@ public class LearningController : Singleton<LearningController>
 	[Tooltip("The cursor to be used with the Directional Indicator.")]
 	public GameObject cursor;
 
-	[Tooltip("The TapToPlace used to place the whole scene.")]
-	public TapToPlaceEx scenePlacement;
-
 	[Tooltip("The text label that represents total values.")]
 	public Text totalText;
 	#endregion // Inspector Fields
@@ -39,7 +26,6 @@ public class LearningController : Singleton<LearningController>
 	{
 		// Unsubscribe from events
 		bitManager.TotalValueChanged -= BitManager_TotalValueChanged;
-		scenePlacement.PlacingStopped -= ScenePlacement_PlacingStopped;
 	}
 
 	void OnEnable()
@@ -53,7 +39,6 @@ public class LearningController : Singleton<LearningController>
 
 		// Subscribe to events
 		bitManager.TotalValueChanged += BitManager_TotalValueChanged;
-		scenePlacement.PlacingStopped += ScenePlacement_PlacingStopped;
 	}
 
 	void Start()
@@ -74,11 +59,6 @@ public class LearningController : Singleton<LearningController>
 			Debug.LogErrorFormat("The {0} inspector field is not set and is required. {1} did not load completely.", "captionsText", this.GetType().Name);
 			return;
 		}
-		if (scenePlacement == null)
-		{
-			Debug.LogErrorFormat("The {0} inspector field is not set and is required. {1} did not load completely.", "scenePlacement", this.GetType().Name);
-			return;
-		}
 		if (totalText == null)
 		{
 			Debug.LogErrorFormat("The {0} inspector field is not set and is required. {1} did not load completely.", "totalText", this.GetType().Name);
@@ -93,27 +73,5 @@ public class LearningController : Singleton<LearningController>
 		// Update the total block
 		totalText.text = bitManager.TotalValue.ToString();
 	}
-
-	private void ScenePlacement_PlacingStopped(object sender, System.EventArgs e)
-	{
-		// If we're in placing, transition to interacting
-		if (state == LearningState.Placing)
-		{
-			state = LearningState.Interacting;
-		}
-	}
 	#endregion // Overrides / Event Handlers
-
-	#region Public Properties
-	/// <summary>
-	/// Gets the current state of the learning controller.
-	/// </summary>
-	public LearningState State
-	{
-		get
-		{
-			return state;
-		}
-	}
-	#endregion // Public Properties
 }

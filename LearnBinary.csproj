@@ -915,6 +915,9 @@
     <Compile Include="Assets\MixedRealityToolkit-Examples\UX\Scripts\Widgets\TextMeshColorThemeWidget.cs" />
     <Compile Include="Assets\MixedRealityToolkit-Examples\UX\Scripts\Widgets\TextureThemeWidget.cs" />
     <Compile Include="Assets\ResetTransitions.cs" />
+    <Compile Include="Assets\SubtitleTrackExample\SubtitleData.cs" />
+    <Compile Include="Assets\SubtitleTrackExample\SubtitleMixer.cs" />
+    <Compile Include="Assets\SubtitleTrackExample\SubtitleTrack.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\LearnBinary\Fonts\chawp\LICENSE.txt" />
