@@ -6,10 +6,13 @@ public class SceneController : MonoBehaviour
 {
 	#region Inspector Fields
 	[Tooltip("The controller for game mode")]
-	public LearningController LearningController;
+	public GameController GameController;
 
 	[Tooltip("The controller for game mode")]
-	public GameController GameController;
+	public LearningController LearningController;
+
+	[Tooltip("The controller for tutorial mode")]
+	public TutorialController TutorialController;
 
 	[Tooltip("The TapToPlace used to place the whole scene.")]
 	public TapToPlaceEx ScenePlacement;
@@ -34,15 +37,33 @@ public class SceneController : MonoBehaviour
 	void Start()
 	{
 		// Validate components
+		if (GameController == null)
+		{
+			Debug.LogErrorFormat("The {0} inspector field is not set and is required. {1} did not load completely.", nameof(GameController), this.GetType().Name);
+			Destroy(this);
+			return;
+		}
+		if (LearningController == null)
+		{
+			Debug.LogErrorFormat("The {0} inspector field is not set and is required. {1} did not load completely.", nameof(LearningController), this.GetType().Name);
+			Destroy(this);
+			return;
+		}
+		if (TutorialController == null)
+		{
+			Debug.LogErrorFormat("The {0} inspector field is not set and is required. {1} did not load completely.", nameof(TutorialController), this.GetType().Name);
+			Destroy(this);
+			return;
+		}
 		if (ScenePlacement == null)
 		{
-			Debug.LogErrorFormat("The {0} inspector field is not set and is required. {1} did not load completely.", "ScenePlacement", this.GetType().Name);
+			Debug.LogErrorFormat("The {0} inspector field is not set and is required. {1} did not load completely.", nameof(ScenePlacement), this.GetType().Name);
 			Destroy(this);
 			return;
 		}
 		if (SceneCollider == null)
 		{
-			Debug.LogErrorFormat("The {0} inspector field is not set and is required. {1} did not load completely.", "SceneCollider", this.GetType().Name);
+			Debug.LogErrorFormat("The {0} inspector field is not set and is required. {1} did not load completely.", nameof(SceneCollider), this.GetType().Name);
 			Destroy(this);
 			return;
 		}
@@ -65,20 +86,30 @@ public class SceneController : MonoBehaviour
 	#region Public Methods
 	public void StartDefault()
 	{
+		// StartGame();
 		// StartLearning();
-		StartGame();
+		StartTutorial();
 	}
 
 	public void StartGame()
 	{
 		LearningController.enabled = false;
+		TutorialController.enabled = false;
 		GameController.enabled = true;
 	}
 
 	public void StartLearning()
 	{
 		GameController.enabled = false;
+		TutorialController.enabled = false;
 		LearningController.enabled = true;
+	}
+
+	public void StartTutorial()
+	{
+		GameController.enabled = false;
+		LearningController.enabled = false;
+		TutorialController.enabled = true;
 	}
 	#endregion // Public Methods
 

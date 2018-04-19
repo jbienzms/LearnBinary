@@ -416,6 +416,7 @@
     <Compile Include="Assets\MixedRealityToolkit\UX\Scripts\Editor\ParabolaEditor.cs" />
     <Compile Include="Assets\MixedRealityToolkit\UX\Scripts\Editor\RectangleEditor.cs" />
     <Compile Include="Assets\MixedRealityToolkit\UX\Scripts\Editor\SplineEditor.cs" />
+    <Compile Include="Assets\TimelineEvents\Scripts\TimelineEvents\Editor\TimelineEventDrawer.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\LearnBinary\Fonts\chawp\LICENSE.txt" />

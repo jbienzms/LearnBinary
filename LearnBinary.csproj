@@ -258,6 +258,7 @@
     <Compile Include="Assets\LearnBinary\Scripts\LearningController.cs" />
     <Compile Include="Assets\LearnBinary\Scripts\SceneController.cs" />
     <Compile Include="Assets\LearnBinary\Scripts\TapToPlaceEx.cs" />
+    <Compile Include="Assets\LearnBinary\Scripts\TutorialController.cs" />
     <Compile Include="Assets\LearnBinary\Tutorial\DoAction.cs" />
     <Compile Include="Assets\LearnBinary\Tutorial\PlayAudio.cs" />
     <Compile Include="Assets\LearnBinary\Tutorial\SetTutorialText.cs" />
@@ -918,6 +919,16 @@
     <Compile Include="Assets\SubtitleTrackExample\SubtitleData.cs" />
     <Compile Include="Assets\SubtitleTrackExample\SubtitleMixer.cs" />
     <Compile Include="Assets\SubtitleTrackExample\SubtitleTrack.cs" />
+    <Compile Include="Assets\TimelineEvents\Demo\DemoScripts\NavMeshFollower.cs" />
+    <Compile Include="Assets\TimelineEvents\Demo\DemoScripts\Robot.cs" />
+    <Compile Include="Assets\TimelineEvents\Demo\DemoScripts\UIManager.cs" />
+    <Compile Include="Assets\TimelineEvents\Demo\DemoScripts\UIType.cs" />
+    <Compile Include="Assets\TimelineEvents\Scripts\Extensions\PrimitiveExtensions.cs" />
+    <Compile Include="Assets\TimelineEvents\Scripts\TimelineEvents\EventInvocationInfo.cs" />
+    <Compile Include="Assets\TimelineEvents\Scripts\TimelineEvents\TimelineEventBehaviour.cs" />
+    <Compile Include="Assets\TimelineEvents\Scripts\TimelineEvents\TimelineEventClip.cs" />
+    <Compile Include="Assets\TimelineEvents\Scripts\TimelineEvents\TimelineEventMixerBehaviour.cs" />
+    <Compile Include="Assets\TimelineEvents\Scripts\TimelineEvents\TimelineEventTrack.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\LearnBinary\Fonts\chawp\LICENSE.txt" />

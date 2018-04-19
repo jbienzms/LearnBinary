@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class LearningController : Singleton<LearningController>
+public class LearningController : MonoBehaviour
 {
 	#region Inspector Fields
 	[Tooltip("The bit manager the scene.")]
